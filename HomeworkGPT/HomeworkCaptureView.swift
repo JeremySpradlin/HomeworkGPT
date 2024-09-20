@@ -8,6 +8,12 @@ struct HomeworkCaptureView: View {
 
     var body: some View {
         VStack(spacing: inputImage == nil ? 40 : 20) {
+            Image("homework") // Use the image name without the extension
+                .resizable()
+                .scaledToFill()
+                .frame(width: UIScreen.main.bounds.width) // Set the frame width to the screen's width
+                .clipped() // Clip the image to the bounds of the frame
+
             if let inputImage = inputImage {
                 Image(uiImage: inputImage)
                     .resizable()
